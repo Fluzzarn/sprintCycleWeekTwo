@@ -2,6 +2,8 @@
 
 var cameraChild;
 var jumpTime = Time.time;
+var facingLeft = true;
+
 
 function Awake () {
 
@@ -22,17 +24,16 @@ function processInput(){
 
 	if(Input.GetButton('d'))
 	{	
-	   if(CameraControl.cameraDirection == 1)
-	   {
+	   
+	    if(!facingLeft)
+	    {
+	     transform.rotation.y = 0;
+	     facingLeft = true;
+	    }
 	     transform.position.x += .1;
 	   
 	   
-	   }
-	   else
-	   {
-	    transform.position.x -= .1;
 	   
-	   }
 
     }
     
@@ -40,17 +41,17 @@ function processInput(){
     
     if(Input.GetButton('a'))
 	{	
-	   if(CameraControl.cameraDirection == 2)
-	   {
-	     transform.position.x += .1;
 	   
 	   
-	   }
-	   else
-	   {
-	    transform.position.x -= .1;
+	     if(facingLeft)
+	     {
+	      transform.rotation.y += 180;
+	      facingLeft = false;
+	     }
+	     transform.position.x -= .1;
 	   
-	   }
+	   
+	  
 
     }
     
@@ -60,6 +61,19 @@ function processInput(){
 	  jumpTime = Time.time;
 	
 	}
+	
+	
+	if(Input.GetButtonDown('q'))
+	{
+	 transform.Rotate(0,90,0);
+	}
+	
+	if(Input.GetButtonDown('e'))
+	{
+	 transform.Rotate(0,-90,0);
+	}
+	
+	
 }
 
 function jump(){

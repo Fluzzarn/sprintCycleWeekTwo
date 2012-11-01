@@ -1,5 +1,5 @@
 #pragma strict
-
+ 
  var startDistance : Vector3;
  var direction = Vector3(-1,0,0);
  var startTime : int;
@@ -37,6 +37,8 @@ function Update () {
 	}
 	
 	processInput();
+	
+	light.intensity = .5 * (GetComponent(heroHealth).heroHealthNumber / 100);
 
   
 }

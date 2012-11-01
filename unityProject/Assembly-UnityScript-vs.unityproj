@@ -45,11 +45,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BasicEnemy.js" />
+     <Compile Include="Assets\Death.js" />
      <Compile Include="Assets\SpriteTest.js" />
      <Compile Include="Assets\heroScripts\CameraControl.js" />
      <Compile Include="Assets\heroScripts\LightSway.js" />
      <Compile Include="Assets\heroScripts\PlayerMovement.js" />
      <Compile Include="Assets\heroScripts\heroHealth.js" />
+     <Compile Include="Assets\heroScripts\weapon.js" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
